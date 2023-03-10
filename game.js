@@ -11,7 +11,10 @@ function playerChoice() {
     console.log("Welcome to Rock, Paper, Scissors game. Do you want to play? (y/n)");
     let userInput = prompt();
     while (userInput === "y") {
-      const pChoice = prompt("Choose rock, paper, or scissors:");
+      let pChoice = prompt("Choose rock, paper, or scissors:");
+      while (pChoice !== "rock" && pChoice !== "paper" && pChoice !== "scissors") {
+        pChoice = prompt("Invalid input. Please choose rock, paper, or scissors:");
+      }
       const cChoice = pcChoice();
       console.log(`You chose ${pChoice}. The computer chose ${cChoice}.`);
       const lowercasePChoice = pChoice.toLowerCase();
